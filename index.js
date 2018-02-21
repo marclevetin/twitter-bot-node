@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
 const dotenv = require('dotenv').config();
 const Twitter = require('twitter');
-const moment = require('moment');
 
 const client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -28,7 +27,7 @@ function getDadJoke() {
   .then(response => response.text())
   .then(body => {
     const joke = JSON.parse(body);
-    console.log(joke.joke)
+    
     return client.post('statuses/update', {status: joke.joke})
             .then(function (tweet) {
               console.log('tweet sent');
