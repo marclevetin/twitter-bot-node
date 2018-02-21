@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "dotenv": "^5.0.0",
+    "moment": "^2.20.1",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
